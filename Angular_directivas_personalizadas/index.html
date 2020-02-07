@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Directivas Personalizadas
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="js/controlador.js"></script>
+
+</head>
+
+<body ng-app="miApp">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Directivas personalizadas</h1>
+            <br>
+            <div class="alert alert-info" ng-controller="miCtrl1">
+                <!--   <h3>{{mensaje}}</h3> -->
+
+                <!-- declaracion, el camelcase del JS se pone con guion en el HTML -->
+                <h4>Por elemento: (primer metodo de isolar el scope)</h4>
+                <mi-directiva dato="'Juan'"></mi-directiva>
+                <mi-directiva dato="'Ana'"></mi-directiva>
+                <mi-directiva dato="nombre1"></mi-directiva>
+                <mi-directiva dato="nombre2"></mi-directiva>
+                <br>
+
+                <!-- segundo metodo -->
+                <h4>Por elemento: (segundo metodo isolar scope, el de la @)</h4>
+                <mi-directiva dato="Juan"></mi-directiva>
+                <mi-directiva dato="Ana"></mi-directiva>
+                <mi-directiva dato="{{nombre1}}"></mi-directiva>
+                <mi-directiva dato="{{nombre2}}"></mi-directiva>
+                <br>
+                <!-- aca cierra con div -->
+                <!-- <h4>Por Atributo:</h4>
+                <div mi-directiva></div>
+                <br> -->
+                <!-- aca es un div con clase -->
+                <!-- <h4>Por Clase:</h4>
+                <div class="mi-directiva"></div>
+                <br> -->
+            </div>
+
+            <div class="alert alert-dark" ng-controller="miCtrl2">
+                <!--    <h3>{{mensaje}}</h3> -->
+                <h4>Por elemento:</h4>
+                <mi-directiva></mi-directiva>
+                <br>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
